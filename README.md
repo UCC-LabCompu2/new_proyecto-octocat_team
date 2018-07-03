@@ -14,4 +14,4 @@ Nuestro proyecto aborda la resolución de circuitos serie, paralelo en corriente
 2. Item 2
 3. Item 3
 
-[Ver la pagina en este link]
+[Ver la pagina en este link](https://ucc-labcompu2.github.io/new_proyecto-octocat_team/index.html)
