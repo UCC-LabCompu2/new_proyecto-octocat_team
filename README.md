@@ -1,1 +1,17 @@
 # new_proyecto-octocat_team
+# proyecto-octocat_team
+proyecto-octocat_team created by GitHub Classroom
+
+¿Que es?
+--------
+Nuestro proyecto aborda la resolución de circuitos serie, paralelo en corriente continua.
+
+* Item 1
+* Item 2
+* Item 3
+
+1. Item 1
+2. Item 2
+3. Item 3
+
+[Ver la pagina en este link]
