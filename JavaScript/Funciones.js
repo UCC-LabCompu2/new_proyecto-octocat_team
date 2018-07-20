@@ -21,6 +21,7 @@ function CalcularSerie() {
     var Req = 0;
     var It = 1;
     var sel;
+    var selReq;
 
     for(i=0; i < 7; i++) {
         valor[i] = document.getElementsByName("valR")[i].value;
@@ -65,14 +66,32 @@ function CalcularSerie() {
     }
 
     fem = document.getElementById("valfem1").value;
-
     if(Req > 0) {
         It = fem / Req;
         document.getElementById("valIt").value = It.toFixed(3);
-        document.getElementById("Req").value = Req.toFixed(3);
         for(i=0; i<7; i++){
             document.getElementsByName("valV")[i].value = (It * resistencias[i]).toFixed(3);
         }
+
+        selReq = document.getElementsByName("multiploOhmReq")[0];
+        switch(selReq.options[selReq.selectedIndex].value){
+            case "mOhm":
+                Req /= 0.001;
+                break;
+            case "Ohm":
+                Req /= 1;
+                break;
+            case "KOhm":
+                Req /= 1000;
+                break;
+            case "MOhm":
+                Req /= 1000000;
+                break;
+            default:
+                Req /= 1;
+                break;
+        }
+        document.getElementById("Req").value = Req.toFixed(3);
 
         var x0=20, y0=20, d=10;
 
@@ -94,6 +113,7 @@ function CalcularSerie() {
     }else {
         alert("Valor de resistencias invalidos.");
     }
+
 }
 
 /**
@@ -113,6 +133,7 @@ function CalcularParalelo() {
     var ReqParl = 0;    //Agregar
     var It = 1;
     var sel;
+    var selReq;
 
     for(i=0; i < 7; i++) {
             valor[i] = document.getElementsByName("valR")[i].value;
@@ -164,7 +185,6 @@ function CalcularParalelo() {
     if(ReqParl > 0 && invReqParl>0) {
         It = fem / ReqParl;
         document.getElementById("valIt").value = It.toFixed(3);
-        document.getElementById("Req").value = ReqParl.toFixed(3); //David: Agrego
 
         //Agrego calculo de Corrientes:
         for(i=0; i<7; i++){
@@ -174,6 +194,27 @@ function CalcularParalelo() {
                 document.getElementsByName("valI")[i].value = "";
             }
         }
+
+        selReq = document.getElementsByName("multiploOhmReq")[0];
+        switch(selReq.options[selReq.selectedIndex].value){
+            case "mOhm":
+                ReqParl /= 0.001;
+                break;
+            case "Ohm":
+                ReqParl /= 1;
+                break;
+            case "KOhm":
+                ReqParl /= 1000;
+                break;
+            case "MOhm":
+                ReqParl /= 1000000;
+                break;
+            default:
+                ReqParl /= 1;
+                break;
+        }
+        document.getElementById("Req").value = ReqParl.toFixed(3);
+
         //Iniciamos con la animación en Canvas
         if(interval)
             clearInterval(interval);
