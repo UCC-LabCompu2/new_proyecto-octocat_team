@@ -1,5 +1,5 @@
 # proyecto-octocat_team
-proyecto-octocat_team created by GitHub Classroom
+proyecto-octocat_team created by GitHub Classroom.
 
 ¿Que es?
 --------
